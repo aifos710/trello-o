@@ -109,7 +109,21 @@ function agregarTituloLista(e){
 
 ## VERSIÓN 0.0.3
 Una vez agregada la lista, mostrar el mensaje clickeable de "Añadir una lista" al lado de la lista agregada.
-![]()```
+
+- Llamamos a la funcion "agregarNuevaLista"
+```javascript
+function agregarNuevaLista(){                                                          	
+		
+		var nuevaLista = document.createElement("div");//creando nuevo span que va al lado
+		section.appendChild(nuevaLista);
+		span.classList.remove("none");
+		nuevaLista.style.display = "inline-block";
+		nuevaLista.appendChild(span);
+		nuevaLista.appendChild(formulario);
+	};
+```
+
+![tres](http://i63.tinypic.com/j64v8o.png)
 ## VERSIÓN 0.0.4
 Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus
 para poder escribir directamente el nombre de la lista.
