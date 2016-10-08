@@ -67,10 +67,49 @@ para que el usuario ingrese el nombre de la lista.
 ## VERSIÓN 0.0.2
 Mostrar en el HTML, el texto ingresado al dar click en el botón de "Guardar" del formulario (como si fuera título de la lista).
 Debajo del título, mostrar el mensaje clickeable de "Añadir una tarjea".
-![]()
+
+- Agregamos los eventos a nuestro boton de "GUARDAR" en la funcion de apareceFormulario
+````javascript
+this.nextElementSibling.lastElementChild.addEventListener("click", agregarTituloLista); //btn guardar
+this.nextElementSibling.lastElementChild.addEventListener("click", agregarNuevaLista); // btn guardar
+````
+```javascript
+function apareceFormulario(){
+		this.classList.add("none" ); // span
+		this.nextElementSibling.classList.remove("none"); // formulario
+		this.parentElement.classList.add("bgContenedor"); // contenedor
+
+		this.nextElementSibling.lastElementChild.addEventListener("click", agregarTituloLista); //btn guardar
+		this.nextElementSibling.lastElementChild.addEventListener("click", agregarNuevaLista); // btn guardar
+	};	
+```
+- Llamamos a la funcion "agregarTituloLlista
+```javascript
+function agregarTituloLista(e){
+		e.preventDefault();
+		formulario.classList.add("none");
+
+		var padreContenedor = this.parentElement.parentElement; //boton,form,contenedor
+
+		var tituloLista = document.createElement("div");
+		tituloLista.textContent= input.value; //titulo de tarjeta nueva
+		padreContenedor.appendChild(tituloLista).classList.add("tituloLista");
+		input.value = "";
+
+		var cajaAnadir = document.createElement("div");
+		cajaAnadir.textContent = "Añadir una tarjeta..."
+		padreContenedor.appendChild(cajaAnadir).classList.add("cajaAnadir");
+
+		cajaAnadir.addEventListener("click", agregarTarjeta);
+	};	
+```
+![dos](http://i66.tinypic.com/2dayv6g.png)
+
+![dos.1](http://i68.tinypic.com/32zmbrn.png)
+
 ## VERSIÓN 0.0.3
 Una vez agregada la lista, mostrar el mensaje clickeable de "Añadir una lista" al lado de la lista agregada.
-![]()
+![]()```
 ## VERSIÓN 0.0.4
 Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus
 para poder escribir directamente el nombre de la lista.
