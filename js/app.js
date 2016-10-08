@@ -40,4 +40,14 @@
 		cajaAnadir.addEventListener("click", agregarTarjeta);
 	};	
 
+	function agregarNuevaLista(){                                                          	
+		
+		var nuevaLista = document.createElement("div");//creando nuevo span que va al lado
+		section.appendChild(nuevaLista);
+		span.classList.remove("none");
+		nuevaLista.style.display = "inline-block";
+		nuevaLista.appendChild(span);
+		nuevaLista.appendChild(formulario);
+	};
+
 })();
