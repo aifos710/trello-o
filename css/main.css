@@ -1,0 +1,46 @@
+body{
+	box-sizing: border-box;
+	background-color: #B04632;
+	white-space: nowrap;
+}
+.none{
+	display: none; 
+}
+
+span{
+	display: inline-block;
+	height: 45px;
+	width: 250px;
+	text-align: center;
+	padding: 10px;
+	color: #CFD1D3;
+	background-color:#9B3E2C;
+	border-radius: 5px;
+}
+
+span:hover{
+	background-color: #6e2f1a;
+	border-radius: 5px;
+}
+
+button{
+	width: 70px !important;
+	
+}
+
+#contenedor{
+	width: 250px;
+	height: auto;
+	border-radius: 5px;
+	
+}
+
+.bgContenedor{
+	background-color: #E2E4E6;
+	display: inline-block;
+	border-radius: 5px;
+	vertical-align: top;
+	width: 250px;
+	padding: 5px;
+	margin: 5px;
+}
