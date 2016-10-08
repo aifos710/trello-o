@@ -64,3 +64,8 @@ a{
 	border-radius: 5px;
 	text-decoration: underline;
 }
+
+.textArea{
+	margin-top: 20px;
+	margin-bottom: 10px;
+}

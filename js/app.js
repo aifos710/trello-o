@@ -17,6 +17,7 @@
 		this.classList.add("none" ); // span
 		this.nextElementSibling.classList.remove("none"); // formulario
 		this.parentElement.classList.add("bgContenedor"); // contenedor
+		input.focus();
 
 		this.nextElementSibling.lastElementChild.addEventListener("click", agregarTituloLista); //btn guardar
 		this.nextElementSibling.lastElementChild.addEventListener("click", agregarNuevaLista); // btn guardar
@@ -48,6 +49,23 @@
 		nuevaLista.style.display = "inline-block";
 		nuevaLista.appendChild(span);
 		nuevaLista.appendChild(formulario);
+	};
+
+	function agregarTarjeta(){
+
+		this.classList.add("none");
+
+		var contTextarea = document.createElement("div");
+		this.parentElement.appendChild(contTextarea).classList.add("contTextarea");
+		
+		var textArea = document.createElement("textarea");
+		contTextarea.appendChild(textArea).classList.add("form-control", "textArea");
+
+		var botonAnadir = document.createElement("button");
+		botonAnadir.textContent = "Añadir";
+		contTextarea.appendChild(botonAnadir).classList.add("btn-success", "btn-block", "btn", "btn-sm", "pull-left", "botonAnadir");
+
+		botonAnadir.addEventListener("click", anadirTarjetaTitulo);
 	};
 
 })();
