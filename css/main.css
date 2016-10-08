@@ -44,3 +44,23 @@ button{
 	padding: 5px;
 	margin: 5px;
 }
+
+a{
+	color:#8C8C8C;
+}
+
+.tituloLista{
+	font-weight: bold;
+}
+
+.cajaAnadir{
+	text-align: left;
+	height: 40px;
+	margin-top: 20px;
+}
+
+.cajaAnadir:hover{
+	background-color: #CCD1D4;
+	border-radius: 5px;
+	text-decoration: underline;
+}
