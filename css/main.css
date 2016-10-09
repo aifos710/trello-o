@@ -69,3 +69,14 @@ a{
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
+
+.claseTarjeta{
+	height: 32px;
+	width: auto;
+	background-color: #fff;
+	margin-top: 20px;
+	border-radius: 5px;
+}
+.claseTarjeta:hover{
+	background-color: #CCD1D4;
+}

@@ -8,6 +8,7 @@
 	var formulario = document.getElementById("formulario"); 
 	var input = document.getElementById("input"); 
 	var botonGuardar = document.getElementById("boton"); 
+	var contador = 1;
 
 	function cargarPagina(){
 		span.addEventListener("click", apareceFormulario);
@@ -67,5 +68,22 @@
 
 		botonAnadir.addEventListener("click", anadirTarjetaTitulo);
 	};
+
+	function anadirTarjetaTitulo(){
+        
+        this.parentElement.classList.add("none");
+        
+        var tarjeta = document.createElement("div");
+        tarjeta.textContent = this.previousElementSibling.value;
+        this.parentElement.parentElement.appendChild(tarjeta).classList.add("claseTarjeta");
+        this.parentElement.parentElement.lastElementChild.classList.add("tarjeta2");
+        
+        var anadirTarjeta = this.parentElement.previousElementSibling;
+        anadirTarjeta.parentElement.appendChild(anadirTarjeta);
+        anadirTarjeta.classList.remove("none");
+        tarjeta.id = "tarjeta" + contador;
+        contador++;
+        
+    };
 
 })();
