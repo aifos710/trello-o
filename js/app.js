@@ -40,6 +40,9 @@
 		padreContenedor.appendChild(cajaAnadir).classList.add("cajaAnadir");
 
 		cajaAnadir.addEventListener("click", agregarTarjeta);
+
+		padreContenedor.addEventListener("drop", dropping);
+		padreContenedor.addEventListener("dragover", draggingOver);
 	};	
 
 	function agregarNuevaLista(){                                                          	
@@ -81,9 +84,25 @@
         var anadirTarjeta = this.parentElement.previousElementSibling;
         anadirTarjeta.parentElement.appendChild(anadirTarjeta);
         anadirTarjeta.classList.remove("none");
+        
         tarjeta.id = "tarjeta" + contador;
         contador++;
-        
+        tarjeta.setAttribute("draggable", "true");
+
+        tarjeta.addEventListener("dragstart", dragStart);   
+    };
+
+    function dropping(e){
+        var idArrastrado = e.dataTransfer.getData("text");//obteniedo info del elemento que arrastrare
+        this.insertBefore(document.getElementById(idArrastrado), this.lastElementChild);
+    };
+
+     function dragStart(e){
+        e.dataTransfer.setData("text", this.id);
+ 	};
+
+    function draggingOver(e){
+        e.preventDefault();
     };
 
 })();
