@@ -81,6 +81,15 @@ a{
 	background-color: #CCD1D4;	
 }
 
+.tarjetaArrastrada{
+	background-color: #fff;
+	border:  double #6e2f1a;
+}
+
+.dndClaseLista{
+	box-shadow: 10px 10px 5px gray;
+}
+
 /*navbar*/
 
 .rowPad{
@@ -105,4 +114,4 @@ button{
 
 .user{
 	width: 260px;
-6
+}
