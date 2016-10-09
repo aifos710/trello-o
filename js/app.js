@@ -38,7 +38,7 @@
         
         cajaAnadir.addEventListener("click", agregarTarjeta);
         
-       // padreContenedor.addEventListener("dragenter", dragEnter); 
+        padreContenedor.addEventListener("dragenter", dragEnter); 
         padreContenedor.addEventListener("drop", dropping);
         padreContenedor.addEventListener("dragover", draggingOver);
     
@@ -93,6 +93,11 @@
     function dropping(e){
         var idArrastrado = e.dataTransfer.getData("text");//obteniedo info del elemento que arrastrare
         this.insertBefore(document.getElementById(idArrastrado), this.lastElementChild);
+        
+        var removeClass = document.getElementsByClassName("dndClaseLista");
+        for (var i = 0, l = removeClass.length; i < l; i++) {
+           removeClass[i].classList.remove("dndClaseLista")
+        }
     };
     
     function draggingOver(e){
@@ -106,7 +111,15 @@
     
     function dragEnd(e){
         this.classList.remove("tarjetaArrastrada");
+        this.parentElement.classList.remove("dndClaseLista");
     };
     
-   
+    function dragEnter(e){
+        this.classList.add("dndClaseLista");
+    };
+
+    function dragLeave(e){
+        this.classList.remove("dndClaseLista");
+    };
+
 })();
