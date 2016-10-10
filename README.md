@@ -1,10 +1,10 @@
 # Trello
 
 ## VERSIÓN 0.0.1
-Un elemento en el HTML con el mensaje "Añadir una lista", que al dar click muestre un input y un botón (formulario) 
++ Un elemento en el HTML con el mensaje "Añadir una lista", que al dar click muestre un input y un botón (formulario) 
 para que el usuario ingrese el nombre de la lista.
 
-+ Creando HTML ( el cual sera usado en todas las versiones)
+- Creando HTML ( el cual sera usado en todas las versiones)
 
 ```html
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ para que el usuario ingrese el nombre de la lista.
 </html>
 ```
 
-+ JavaScript
+- JavaScript
 
 ```javascript
 //Iniciamos con un "punto y coma" para que cualquier codigo escrito antes no perjudique a este
@@ -66,8 +66,7 @@ para que el usuario ingrese el nombre de la lista.
 ![uno.1](http://i64.tinypic.com/2ro417r.png)
 
 ## VERSIÓN 0.0.2
-Mostrar en el HTML, el texto ingresado al dar click en el botón de "Guardar" del formulario (como si fuera título de la lista).
-Debajo del título, mostrar el mensaje clickeable de "Añadir una tarjea".
++ Mostrar en el HTML, el texto ingresado al dar click en el botón de "Guardar" del formulario (como si fuera título de la lista).
 
 - Agregamos los eventos a nuestro boton de "GUARDAR" en la funcion de apareceFormulario
 ````javascript
@@ -84,6 +83,10 @@ function apareceFormulario(){
 		this.nextElementSibling.lastElementChild.addEventListener("click", agregarNuevaLista); // btn guardar
 	};	
 ```
+- Agregamos los eventos a nuestro boton de "GUARDAR" en la funcion de apareceFormulario.
+
++ Debajo del título, mostrar el mensaje clickeable de "Añadir una tarjea".
+
 - Llamamos a la funcion "agregarTituloLlista
 ```javascript
 function agregarTituloLista(e){
@@ -109,7 +112,7 @@ function agregarTituloLista(e){
 ![dos.1](http://i68.tinypic.com/32zmbrn.png)
 
 ## VERSIÓN 0.0.3
-Una vez agregada la lista, mostrar el mensaje clickeable de "Añadir una lista" al lado de la lista agregada.
++ Una vez agregada la lista, mostrar el mensaje clickeable de "Añadir una lista" al lado de la lista agregada.
 
 - Llamamos a la funcion "agregarNuevaLista"
 ```javascript
@@ -127,13 +130,15 @@ function agregarNuevaLista(){
 ![tres](http://i63.tinypic.com/j64v8o.png)
 ## VERSIÓN 0.0.4
 
-- Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus
++ Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus
 para poder escribir directamente el nombre de la lista.
-- Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar la tarjeta 
-(Nota: El ingreso de texto es mediante un textarea).
+
 ```javascript
 input.focus();
 ```
++ Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar la tarjeta 
+(Nota: El ingreso de texto es mediante un textarea).
+
 
 ```javascript
 cajaAnadir.addEventListener("click", agregarTarjeta);
@@ -156,7 +161,7 @@ function agregarTarjeta(){
 
 ![cuatro](http://i63.tinypic.com/35nau6f.png )
 ## VERSIÓN 0.0.5
-Al dar click en el botón de guardar al momento de añadir tarjeta, 
++ Al dar click en el botón de guardar al momento de añadir tarjeta, 
 mostrar el mensaje de "Añadir tarjeta" debajo de la tarjeta añadida.
 
 ```javascript
@@ -183,5 +188,17 @@ function anadirTarjetaTitulo(){
 
 ![cinco.3](http://i64.tinypic.com/32zv0uh.png)
 ## VERSIÓN 0.0.6
-Asegurar la funcionalidad de poder agregar múltiples listas y tarjetas.
++ Asegurar la funcionalidad de poder agregar múltiples listas y tarjetas.
 ![seis](http://i65.tinypic.com/255l1cx.png)
+
+# TRELLO V2
+
+## VERSIÓN 0.1.0
+Implementar el evento Drag & Drop de las tarjetas para que pueda ser movida entre las listas creadas.
+## VERSIÓN 0.1.1
+Agregar un estilo personalizado a la tarjeta cuando esté siendo arrastrada por el usuario.
+## VERSIÓN 0.1.2
+Agregar un estilo a la lista cuando la tarjeta esté pasando por encima (dragover).
+## VERSIÓN 0.1.3
+Agregar una transición css cuando la tarjeta y/o lista haya sido colocada en una nueva lista.
+RELEASE: TRELLO VERSIÓN 1.0.0
