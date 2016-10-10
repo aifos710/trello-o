@@ -76,7 +76,7 @@
         tarjeta.setAttribute("draggable", "true");
     
         tarjeta.addEventListener("dragstart", dragStart);
-        //tarjeta.addEventListener("dragleave", dragLeave);
+        tarjeta.addEventListener("dragleave", dragLeave);
         tarjeta.addEventListener("dragend", dragEnd); 
     };
     
@@ -93,10 +93,11 @@
     function dropping(e){
         var idArrastrado = e.dataTransfer.getData("text");//obteniedo info del elemento que arrastrare
         this.insertBefore(document.getElementById(idArrastrado), this.lastElementChild);
+        this.classList.add("animated", "zoomIn");
         
         var removeClass = document.getElementsByClassName("dndClaseLista");
         for (var i = 0, l = removeClass.length; i < l; i++) {
-           removeClass[i].classList.remove("dndClaseLista")
+            removeClass[i].classList.remove("dndClaseLista")
         }
     };
     
@@ -107,11 +108,16 @@
     function dragStart(e){
         e.dataTransfer.setData("text", this.id);
         this.classList.add("tarjetaArrastrada");
+    
+        var removeClass = document.getElementsByClassName("animated");
+        for (var i = 0, l = removeClass.length; i < l; i++) {
+            removeClass[i].classList.remove("animated", "zoomIn");
+        }
     };
     
     function dragEnd(e){
         this.classList.remove("tarjetaArrastrada");
-        this.parentElement.classList.remove("dndClaseLista");
+       // this.parentElement.classList.remove("dndClaseLista");
     };
     
     function dragEnter(e){
