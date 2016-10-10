@@ -64,6 +64,7 @@ para que el usuario ingrese el nombre de la lista.
 ![uno](http://i67.tinypic.com/27y5y0w.png)
 
 ![uno.1](http://i64.tinypic.com/2ro417r.png)
+
 ## VERSIÓN 0.0.2
 Mostrar en el HTML, el texto ingresado al dar click en el botón de "Guardar" del formulario (como si fuera título de la lista).
 Debajo del título, mostrar el mensaje clickeable de "Añadir una tarjea".
@@ -125,15 +126,62 @@ function agregarNuevaLista(){
 
 ![tres](http://i63.tinypic.com/j64v8o.png)
 ## VERSIÓN 0.0.4
-Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus
+
+- Al dar click en "Añadir una lista", asegurarse que el input del formulario tenga el focus
 para poder escribir directamente el nombre de la lista.
-Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar la tarjeta 
+- Dar click al mensaje "Añadir una tarjeta" y mostrar e formulario para agregar la tarjeta 
 (Nota: El ingreso de texto es mediante un textarea).
-![]()
+```javascript
+input.focus();
+```
+
+```javascript
+cajaAnadir.addEventListener("click", agregarTarjeta);
+```
+
+```javascript
+function agregarTarjeta(){
+        this.classList.add("none");
+        var contTextarea = document.createElement("div");
+        this.parentElement.appendChild(contTextarea).classList.add("contTextarea");
+        
+        var textArea = document.createElement("textarea");
+        contTextarea.appendChild(textArea).classList.add("form-control", "textArea");
+        var botonAnadir = document.createElement("button");
+        botonAnadir.textContent = "Añadir";
+        contTextarea.appendChild(botonAnadir).classList.add("btn-success", "btn-block", "btn", "btn-sm", "pull-left", "botonAnadir");
+        botonAnadir.addEventListener("click", anadirTarjetaTitulo);
+    };
+```
+
+![cuatro](http://i63.tinypic.com/35nau6f.png )
 ## VERSIÓN 0.0.5
 Al dar click en el botón de guardar al momento de añadir tarjeta, 
 mostrar el mensaje de "Añadir tarjeta" debajo de la tarjeta añadida.
-![]()
+
+```javascript
+function anadirTarjetaTitulo(){
+        
+        this.parentElement.classList.add("none");
+        
+        var tarjeta = document.createElement("div");
+        tarjeta.textContent = this.previousElementSibling.value;
+        this.parentElement.parentElement.appendChild(tarjeta).classList.add("claseTarjeta");
+        this.parentElement.parentElement.lastElementChild.classList.add("tarjeta2");
+        
+        var anadirTarjeta = this.parentElement.previousElementSibling;
+        anadirTarjeta.parentElement.appendChild(anadirTarjeta);
+        anadirTarjeta.classList.remove("none");
+        tarjeta.id = "tarjeta" + contador;
+        contador++;
+        
+    };
+```
+![cinco.1](http://i66.tinypic.com/1gmzhl.png)
+
+![cinco.2](http://i66.tinypic.com/1445y61.png)
+
+![cinco.3](http://i64.tinypic.com/32zv0uh.png)
 ## VERSIÓN 0.0.6
 Asegurar la funcionalidad de poder agregar múltiples listas y tarjetas.
-![]()
+![seis](http://i65.tinypic.com/255l1cx.png)
